@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using UrunStok.UI.Context;
 
@@ -11,9 +12,11 @@ using UrunStok.UI.Context;
 namespace UrunStok.UI.Migrations
 {
     [DbContext(typeof(UrunStokDbContext))]
-    partial class UrunStokDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250614124639_m2")]
+    partial class m2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -31,7 +34,6 @@ namespace UrunStok.UI.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Ad")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -111,7 +113,7 @@ namespace UrunStok.UI.Migrations
                     b.Property<decimal>("Fiyat")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int?>("KategoriId")
+                    b.Property<int>("KategoriId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -144,7 +146,9 @@ namespace UrunStok.UI.Migrations
                 {
                     b.HasOne("UrunStok.UI.Models.Kategori", "Kategori")
                         .WithMany("Urunler")
-                        .HasForeignKey("KategoriId");
+                        .HasForeignKey("KategoriId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Kategori");
                 });
