@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using UrunStok.UI.Context;
 
@@ -11,9 +12,11 @@ using UrunStok.UI.Context;
 namespace UrunStok.UI.Migrations
 {
     [DbContext(typeof(UrunStokDbContext))]
-    partial class UrunStokDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250614125039_m3")]
+    partial class m3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -1,0 +1,27 @@
+﻿@model ICollection<Urun>
+
+	<h2>Ürünler</h2>
+	<a href="@Url.Action("Create")" class="btn btn-success">Ürün Ekle</a>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Ürün Adı</th>
+				<th>Kategori</th>
+				<th>Fiyatı</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var urun in Model)
+		{
+			<tr>
+				<td>@urun.Ad</td>
+				<td>@urun.Kategori.Ad</td>
+				<td>@urun.Fiyat</td>
+				<td>
+					<a href="@Url.Action("Delete",new{id=urun.Id})" class="btn btn-danger">SİL</a>
+					<a href="@Url.Action("Edit",new{id=urun.Id})" class="btn btn-danger">GÜNCELLE</a>
+				</td>
+			</tr>
+		}
+		</tbody>
+	</table>
