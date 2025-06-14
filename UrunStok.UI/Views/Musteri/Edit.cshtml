@@ -1,0 +1,22 @@
+﻿@model Musteri
+
+<h2>Müşteri Güncelle</h2>
+
+<form asp-action="Edit" method="post" class="form-group">
+	<input type="hidden" asp-for="Id"/>
+	<div>
+		<label asp-for="Ad">Ad</label>
+		<input asp-for="Ad" class="form-control"/>
+	</div>
+	<div>
+		<label asp-for="Soyad">Soyad</label>
+		<input asp-for="Soyad" class="form-control" />
+	</div>
+	<div>
+		<label asp-for="Eposta">Eposta</label>
+		<input asp-for="Eposta" class="form-control" />
+	</div>
+
+	<button type="submit" class="btn btn-primary">Güncelle</button>
+
+</form>

@@ -1,0 +1,25 @@
+﻿@model ICollection<Kategori>
+
+	<h2>Kategoriler</h2>
+	<a href="@Url.Action("Create")" class="btn btn-success">Kategori Ekle</a>
+	<table class="table table-secondary"> 
+    <thead>
+		<tr>
+			<th>Id</th>
+			<th>Ad</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var kategori in Model)
+		{
+			<tr>
+				<td>@kategori.Id</td>
+				<td>@kategori.Ad</td>
+				<td>
+					<a href="@Url.Action("Edit",new{id=kategori.Id})" class="btn btn-primary" >Düzenle</a>
+					<a href="@Url.Action("Delete",new{id=kategori.Id})" class="btn btn-danger">Sil</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>

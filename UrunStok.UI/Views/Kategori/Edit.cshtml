@@ -1,0 +1,9 @@
+﻿@model Kategori
+
+<h2>Kategori Düzenle</h2>
+<form asp-action="Edit" method="post" class="form-group">
+	<input type="hidden" asp-for="Id"/>
+	<label>Kategori Adı</label>
+	<input asp-for="Ad" class="form-control"/>
+	<button type="submit" class="btn btn-primary">Güncelle</button>
+</form>
