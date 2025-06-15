@@ -5,6 +5,7 @@ namespace UrunStok.UI.TagHelpers
     [HtmlTargetElement("custom-login-form")]
     public class LoginTagHelper : TagHelper
     {
+        public string Baslik { get; set; }
         public string HataMesaji { get; set; } //TagHelper içinde yazarken hata-mesaji olarak yazılır
 
         public override void Process(TagHelperContext context, TagHelperOutput output)
@@ -16,7 +17,10 @@ namespace UrunStok.UI.TagHelpers
             var hataSpan = string.IsNullOrWhiteSpace(HataMesaji)
                 ? "<span class='text-danger'></span>" : $"<span class='text-danger'>{HataMesaji}</span>";
 
+            var baslik = $"<h2 style='text-align:center'>{Baslik}</h2>";
+
             output.Content.SetHtmlContent(@$"
+               {baslik}
                <div class='form-group'>
                   <label> Kullanıcı Adı </label>
                   <input name = 'KullaniciAdi' required />
