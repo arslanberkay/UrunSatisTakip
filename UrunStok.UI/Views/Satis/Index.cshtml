@@ -25,6 +25,10 @@
 					<td>@satis.Adet</td>
 					<td>@satis.Fiyat.ToString("0.00")</td>
 					<td>@satis.Tarih.ToString("yyyy:MM:dd HH:mm:ss")</td>
+					<td>
+						<a  href="@Url.Action("Edit",new{id=satis.Id})" class="btn btn-primary">Düzenle</a>
+						<a  href="@Url.Action("Delete",new{id=satis.Id})" class="btn btn-danger" onclick="return confirm('Bu satışı silmek istediğinizden emin misiniz?')">Sil</a>
+					</td>
 				</tr>
 			}
 		</tbody>
