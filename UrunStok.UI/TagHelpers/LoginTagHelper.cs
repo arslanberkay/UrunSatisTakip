@@ -17,18 +17,19 @@ namespace UrunStok.UI.TagHelpers
                 ? "<span class='text-danger'></span>" : $"<span class='text-danger'>{HataMesaji}</span>";
 
             output.Content.SetHtmlContent(@$"
-<div class='form-group'>
-<label> Kullanıcı Adı </label>
-<input name = 'KullaniciAdi' required />
-</div>
+               <div class='form-group'>
+                  <label> Kullanıcı Adı </label>
+                  <input name = 'KullaniciAdi' required />
+               </div>
+                 
+               <div class='form-group'>
+                  <label> Şifre </label>
+                  <input name = 'Sifre' type='password'  required />
+               </div>
 
-<div class='form-group'>
-<label> Şifre </label>
-<input name = 'Sifre' type='password'  required />
-</div>
+               <button type='submit'> Giriş Yap </button>
+               {hataSpan}");
 
-<button type='submit'> Giriş Yap </button>
-{hataSpan}");
             base.Process(context, output);
         }
     }

@@ -2,10 +2,10 @@
 
 <h2>Müşteriler</h2>
 <a href="@Url.Action("Create")" class="btn btn-primary">Müşteri Ekle</a>
-<table class="table table-bordered">
+@* <table class="table table-bordered">
     <thead>
         <tr>
-            <th>ID</th>
+            <th>Id</th>
             <th>Ad</th>
             <th>Soyad</th>
             <th>Eposta</th>
@@ -26,4 +26,5 @@
             </tr>
         }
     </tbody>
-</table>
+</table> *@
+<custom-table items="Model" controller-name="Musteri" columns="Id,Ad,Soyad,Eposta"></custom-table>
