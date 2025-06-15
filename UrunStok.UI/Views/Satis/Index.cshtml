@@ -1,0 +1,32 @@
+﻿@model ICollection<Satis>
+
+	<h2>Satışlar</h2>
+	<div class="container">
+		<a href="@Url.Action("Create")" class="btn btn-success">Satış Ekle</a>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Müşteri</th>
+				<th>Ürün</th>
+				<th>Adet</th>
+				<th>Fiyat</th>
+				<th>Tarih</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			@foreach (var satis in Model)
+			{
+				<tr>
+					<td>@satis.Id</td>
+					<td>@(satis.Musteri.Ad + " " + satis.Musteri.Soyad)</td>
+					<td>@satis.Urun.Ad</td>
+					<td>@satis.Adet</td>
+					<td>@satis.Fiyat.ToString("0.00")</td>
+					<td>@satis.Tarih.ToString("yyyy:MM:dd HH:mm:ss")</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+	</div>
