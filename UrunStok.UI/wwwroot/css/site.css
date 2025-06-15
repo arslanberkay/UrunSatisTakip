@@ -1,22 +1,84 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
 }
+
+.custom-login-form {
+    width: 100%;
+    max-width: 400px;
+    margin: 250px auto;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+    .custom-login-form .form-group {
+        margin-bottom: 20px;
+    }
+
+    .custom-login-form label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: #333;
+    }
+
+    .custom-login-form input {
+        width: 100%;
+        padding: 10px 12px;
+        border: 1px solid #ccc;
+        border-radius:8px;
+        font-size:15px;
+        transition:border-color 0.3s ease;
+    }
+
+    .custom-login-form input:focus{
+        border-color:#007bff;
+        outline:none;
+    }
+
+    .custom-login-form button[type="submit"]{
+        width:100%;
+        padding:12px;
+        background-color:#007bff;
+        border:none;
+        border-radius:8px;
+        color:white;
+        font-size:16px;
+        font-weight:bold;
+        cursor:pointer;
+        transition:background-color 0.3s ease;
+    }
+
+    .custom-login-form button[type="submit"]:hover{
+        background-color:#0056b3;
+    }
+
+    .custom-login-form .text-danger{
+        color:#d9534f;
+        font-weight:bold;
+        margin-top:10px;
+        display:block;
+        font-size:14px;
+        text-align:center;
+    }
