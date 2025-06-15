@@ -3,7 +3,7 @@
 	<h2>Satışlar</h2>
 	<div class="container">
 		<a href="@Url.Action("Create")" class="btn btn-success">Satış Ekle</a>
-	<table class="table table-bordered">
+	@* <table class="table table-bordered">
 		<thead>
 			<tr>
 				<th>Id</th>
@@ -32,5 +32,8 @@
 				</tr>
 			}
 		</tbody>
-	</table>
+	</table> *@
+
+	<custom-table controller-name="Satis" items="Model" columns="Id,Musteri.Ad:Müşteri Ad,Musteri.Soyad:Müşteri Soyad,Urun.Ad:Ürün,Adet,Fiyat,Tarih"></custom-table>
+
 	</div>

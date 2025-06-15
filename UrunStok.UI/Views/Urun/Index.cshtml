@@ -2,9 +2,10 @@
 
 	<h2>Ürünler</h2>
 	<a href="@Url.Action("Create")" class="btn btn-success">Ürün Ekle</a>
-	<table class="table table-bordered">
+	@* <table class="table table-bordered">
 		<thead>
 			<tr>
+				<th>Id</th>
 				<th>Ürün Adı</th>
 				<th>Kategori</th>
 				<th>Fiyatı</th>
@@ -14,6 +15,7 @@
 			@foreach (var urun in Model)
 		{
 			<tr>
+				<td>@urun.Id</td>
 				<td>@urun.Ad</td>
 				<td>@urun.Kategori.Ad</td>
 				<td>@urun.Fiyat</td>
@@ -24,4 +26,6 @@
 			</tr>
 		}
 		</tbody>
-	</table>
+	</table> *@
+
+	<custom-table controller-name="Urun" items="Model" columns="Id,Ad:Ürün Adı, Kategori.Ad:Kategori,Fiyat:Fiyatı"></custom-table>

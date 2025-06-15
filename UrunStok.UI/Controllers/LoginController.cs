@@ -13,7 +13,7 @@ namespace UrunStok.UI.Controllers
         [HttpPost]
         public IActionResult Index(AdminViewModel admin)
         {
-            if (admin.KullaniciAdi == "admin" && admin.Sifre == "123")
+            if (admin.KullaniciAdi == "berkay" && admin.Sifre == "8753")
             {
                 return RedirectToAction("Index", "Satis");
             }
