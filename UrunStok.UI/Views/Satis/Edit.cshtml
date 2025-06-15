@@ -1,0 +1,27 @@
+﻿@model Satis
+
+<h2>Satış Güncelleme</h2>
+<form asp-action="Edit" method="post" class="form-group">
+	<input type="hidden" asp-for="Id"/>
+	<div>
+		<label asp-for="MusteriId"> Müşteri</label>
+		<select asp-for="MusteriId" asp-items="ViewBag.Musteriler" class="form-control"></select>
+	</div>
+	<div>
+		<label asp-for="UrunId"> Ürün</label>
+		<select asp-for="UrunId" asp-items="ViewBag.Urunler" class="form-control"></select>
+	</div>
+	<div>
+		<label asp-for="Fiyat">Fiyat</label>
+		<input asp-for="Fiyat" class="form-control"/>
+		<span asp-validation-for="Fiyat" class="text-danger"></span>
+	</div>
+	<div>
+		<label asp-for="Adet">Adet</label>
+		<input asp-for="Adet" class="form-control" />
+		<span asp-validation-for="Adet" class="text-danger"></span>
+	</div>
+	<input type="hidden" asp-for="Tarih" />
+
+	<button type="submit" class="btn btn-success">Güncelle</button>
+</form>

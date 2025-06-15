@@ -4,26 +4,28 @@
 
 <form asp-action="Create" method="post" class="form-group">
 
-	<div class="form-group">
+	<custom-dropdown name="MusteriId" label="Müşteri" items=ViewBag.Musteriler asp-for="MusteriId"></custom-dropdown>
+	@* <div class="form-group">
 		<label asp-for="MusteriId">Müşteri Seçiniz</label>
 		<select asp-for="MusteriId" asp-items="ViewBag.Musteriler" class="form-control" >
 			<option value="">Seçiniz</option>
 		</select>
-			<span asp-validation-for="MusteriId" class="text-danger"></span>
-		
-	</div>
+		<span asp-validation-for="MusteriId" class="text-danger"></span>
+	</div> *@
 
-	<div class="form-group">
+
+	<custom-dropdown name="UrunId" label="Ürün" items=ViewBag.Urunler asp-for="UrunId"> </custom-dropdown>
+	@* <div class="form-group">
 		<label asp-for="UrunId">Ürün Seçiniz</label>
 		<select asp-for="UrunId" asp-items="ViewBag.Urunler" class="form-control">
 			<option value="">Seçiniz</option>
 		</select>
 		<span asp-validation-for="UrunId" class="text-danger"></span>
-	</div>
+	</div> *@
 
 	<div class="form-group">
 		<label asp-for="Adet">Adet</label>
-		<input asp-for="Adet" class="form-control"/>
+		<input asp-for="Adet" class="form-control" />
 		<span asp-validation-for="Adet" class="text-danger"></span>
 	</div>
 
@@ -34,5 +36,5 @@
 	</div>
 
 	<button type="submit" class="btn btn-success">Satış Ekle</button>
-	
+
 </form>
