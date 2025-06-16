@@ -6,6 +6,7 @@
 	<div class="form-group">
 		<label asp-for="Ad">Ürün Ad</label>
 		<input asp-for="Ad" class="form-control" />
+		<span asp-validation-for="Ad" class="text-danger"></span>
 	</div>
 	<div class="form-group">
 		<select asp-for="KategoriId" asp-items="ViewBag.Kategoriler" class="form-control"> </select>
