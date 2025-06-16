@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using UrunStok.UI.Context;
+using UrunStok.UI.Middlewares;
 
 namespace UrunStok.UI
 {
@@ -25,6 +26,8 @@ namespace UrunStok.UI
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+
+            app.UseMiddleware<UrunSatisLogMiddleware>();
 
             app.UseRouting();
 
