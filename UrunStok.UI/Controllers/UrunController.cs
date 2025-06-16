@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using UrunStok.UI.Context;
+using UrunStok.UI.Filters;
 using UrunStok.UI.Models;
 
 namespace UrunStok.UI.Controllers
@@ -31,6 +32,7 @@ namespace UrunStok.UI.Controllers
         }
 
         [HttpPost]
+        [UnıqueUrunAdiFilter]
         public IActionResult Create(Urun urun)
         {
             if (urun.KategoriId == null)
@@ -56,6 +58,7 @@ namespace UrunStok.UI.Controllers
         }
 
         [HttpPost]
+        [UnıqueUrunAdiFilter]
         public IActionResult Edit(Urun urun)
         {
             _db.Urunler.Update(urun);
