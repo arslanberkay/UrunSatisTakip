@@ -46,7 +46,7 @@ namespace UrunStok.UI.Controllers
 
             if (!ModelState.IsValid)
             {
-                
+
                 ViewBag.Musteriler = _db.Musteriler
                 .Select(m => new SelectListItem
                 {
@@ -59,6 +59,7 @@ namespace UrunStok.UI.Controllers
                 return View(satis);
             }
 
+            HttpContext.Items["yeniSatis"] = satis;
             _db.Satislar.Add(satis);
             _db.SaveChanges();
 
@@ -66,10 +67,10 @@ namespace UrunStok.UI.Controllers
         }
 
         [HttpGet]
-        public  IActionResult Edit(int id)
+        public IActionResult Edit(int id)
         {
             var satis = _db.Satislar.Find(id);
-            if (satis!=null)
+            if (satis != null)
             {
                 ViewBag.Musteriler = _db.Musteriler
                     .Select(m => new SelectListItem
@@ -83,11 +84,11 @@ namespace UrunStok.UI.Controllers
                 return View(satis);
             }
             return RedirectToAction(nameof(Index));
-          
+
         }
 
         [HttpPost]
-        public IActionResult Edit(Satis satis) 
+        public IActionResult Edit(Satis satis)
         {
             if (!ModelState.IsValid)
             {
@@ -101,7 +102,7 @@ namespace UrunStok.UI.Controllers
 
                 ViewBag.Urunler = new SelectList(_db.Urunler, "Id", "Ad");
                 return View(satis);
-             
+
             }
             _db.Satislar.Update(satis);
             _db.SaveChanges();
@@ -113,7 +114,7 @@ namespace UrunStok.UI.Controllers
         public IActionResult Delete(int id)
         {
             var satis = _db.Satislar.Find(id);
-            if (satis!=null)
+            if (satis != null)
             {
                 _db.Satislar.Remove(satis);
                 _db.SaveChanges();
